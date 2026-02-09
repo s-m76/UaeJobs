@@ -1,0 +1,352 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>UAE Job Competition Forecast (2011–2019)</title>
+
+  <style>
+    :root {
+      --bg: #0b0f19;
+      --card: #121a2a;
+      --card2: #0f1626;
+      --text: #e9eefc;
+      --muted: #a9b6d3;
+      --line: rgba(255,255,255,.10);
+      --accent: #5aa2ff;
+      --good: #2dd4bf;
+      --warn: #fbbf24;
+      --bad:  #fb7185;
+      --shadow: 0 12px 30px rgba(0,0,0,.35);
+      --radius: 16px;
+    }
+
+    * { box-sizing: border-box; }
+    body {
+      margin: 0;
+      font-family: ui-sans-serif, system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+      background: radial-gradient(1200px 600px at 20% -10%, rgba(90,162,255,.30), transparent 60%),
+                  radial-gradient(900px 500px at 90% 0%, rgba(45,212,191,.18), transparent 55%),
+                  var(--bg);
+      color: var(--text);
+    }
+
+    .wrap { max-width: 1200px; margin: 0 auto; padding: 26px 18px 60px; }
+    header {
+      display: flex; flex-wrap: wrap; gap: 14px;
+      align-items: flex-end; justify-content: space-between;
+      margin-bottom: 18px;
+    }
+    h1 { font-size: 28px; margin: 0; letter-spacing: .2px; }
+    .subtitle { color: var(--muted); margin: 6px 0 0; max-width: 860px; line-height: 1.45; }
+
+    .grid {
+      display: grid;
+      grid-template-columns: repeat(12, 1fr);
+      gap: 14px;
+      margin-top: 16px;
+    }
+
+    .card {
+      background: linear-gradient(180deg, rgba(255,255,255,.06), rgba(255,255,255,.03));
+      border: 1px solid var(--line);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 16px;
+    }
+
+    .kpi {
+      display: flex; flex-direction: column; gap: 8px;
+      min-height: 92px;
+    }
+    .kpi .label { color: var(--muted); font-size: 13px; }
+    .kpi .value { font-size: 20px; font-weight: 700; }
+    .pill {
+      display: inline-flex;
+      align-items: center;
+      gap: 8px;
+      padding: 7px 10px;
+      border-radius: 999px;
+      background: rgba(90,162,255,.14);
+      border: 1px solid rgba(90,162,255,.28);
+      color: var(--text);
+      font-size: 13px;
+      width: fit-content;
+    }
+    .dot {
+      width: 9px; height: 9px; border-radius: 50%;
+      background: var(--accent);
+      box-shadow: 0 0 0 3px rgba(90,162,255,.18);
+    }
+
+    .tabs {
+      display: flex; gap: 10px; flex-wrap: wrap;
+      margin: 14px 0;
+    }
+    .tab {
+      cursor: pointer;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      color: var(--text);
+      padding: 10px 12px;
+      border-radius: 12px;
+      font-weight: 600;
+      font-size: 13px;
+      transition: .2s;
+    }
+    .tab.active {
+      border-color: rgba(90,162,255,.50);
+      background: rgba(90,162,255,.14);
+    }
+
+    .section-title {
+      margin: 0 0 8px;
+      font-size: 16px;
+      letter-spacing: .2px;
+    }
+    .muted { color: var(--muted); line-height: 1.45; }
+
+    iframe {
+      width: 100%;
+      height: 520px;
+      border: 1px solid var(--line);
+      border-radius: 14px;
+      background: #0b0f19;
+    }
+
+    table {
+      width: 100%;
+      border-collapse: collapse;
+      overflow: hidden;
+      border-radius: 14px;
+      border: 1px solid var(--line);
+    }
+    th, td {
+      text-align: left;
+      padding: 10px 10px;
+      border-bottom: 1px solid var(--line);
+      font-size: 13px;
+    }
+    th { color: var(--muted); font-weight: 700; background: rgba(255,255,255,.03); }
+    tr:hover td { background: rgba(255,255,255,.03); }
+
+    .badge {
+      padding: 4px 8px;
+      border-radius: 999px;
+      font-weight: 700;
+      font-size: 12px;
+      border: 1px solid var(--line);
+      background: rgba(255,255,255,.03);
+      display: inline-flex;
+      align-items: center;
+      gap: 6px;
+    }
+    .badge.best {
+      border-color: rgba(45,212,191,.55);
+      background: rgba(45,212,191,.14);
+    }
+
+    .col-12 { grid-column: span 12; }
+    .col-8  { grid-column: span 8; }
+    .col-6  { grid-column: span 6; }
+    .col-4  { grid-column: span 4; }
+
+    @media (max-width: 980px) {
+      .col-8, .col-6, .col-4 { grid-column: span 12; }
+      iframe { height: 500px; }
+    }
+
+    .footer {
+      margin-top: 18px;
+      color: var(--muted);
+      font-size: 12px;
+    }
+
+    .hidden { display: none; }
+  </style>
+</head>
+
+<body>
+  <div class="wrap">
+    <header>
+      <div>
+        <h1>UAE Job Competition Forecast (Private Sector, 2011–2019)</h1>
+        <p class="subtitle">
+          This dashboard trains three regression models (Linear Regression, Decision Tree, Random Forest) to estimate a
+          <b>Competition Score</b> for each <b>Occupation × Emirate</b> using historical employment patterns.
+          A higher score means the occupation is more crowded and growing faster, so job entry may be harder.
+        </p>
+      </div>
+      <div class="pill"><span class="dot"></span> Standalone report • No backend</div>
+    </header>
+
+    <div class="grid">
+      <div class="card kpi col-4">
+        <div class="label">Best Model</div>
+        <div class="value">Linear Regression</div>
+        <div class="muted">Selected using the lowest RMSE (prediction error).</div>
+      </div>
+
+      <div class="card kpi col-4">
+        <div class="label">Models Trained</div>
+        <div class="value">3</div>
+        <div class="muted">Linear Regression, Decision Tree, Random Forest.</div>
+      </div>
+
+      <div class="card kpi col-4">
+        <div class="label">Years Covered</div>
+        <div class="value">2011–2019</div>
+        <div class="muted">Competition is estimated from historical trends.</div>
+      </div>
+    </div>
+
+    <div class="tabs">
+      <button class="tab active" data-tab="tab_models">Model Results</button>
+      <button class="tab" data-tab="tab_insights">Insights</button>
+      <button class="tab" data-tab="tab_visuals">Visualizations</button>
+      <button class="tab" data-tab="tab_about">About</button>
+    </div>
+
+    <!-- TAB: Model Results -->
+    <div id="tab_models" class="grid">
+      <div class="card col-12">
+        <h2 class="section-title">Model Comparison</h2>
+        <p class="muted">Lower RMSE and MAE are better. Higher R² is better.</p>
+        <div id="results_table"></div>
+      </div>
+
+      <div class="card col-12">
+        <iframe src="assets/model_comparison.html"></iframe>
+      </div>
+    </div>
+
+    <!-- TAB: Insights -->
+    <div id="tab_insights" class="grid hidden">
+      <div class="card col-6">
+        <h2 class="section-title">Top 20 Most Competitive (Predicted)</h2>
+        <p class="muted">These occupation–emirate pairs have the highest predicted competition scores.</p>
+        <div id="top_table"></div>
+      </div>
+
+      <div class="card col-6">
+        <h2 class="section-title">Bottom 20 Least Competitive (Predicted)</h2>
+        <p class="muted">These pairs have lower predicted competition scores and may be easier entry options.</p>
+        <div id="bottom_table"></div>
+      </div>
+
+      <div class="card col-12">
+        <iframe src="assets/top20_competition.html"></iframe>
+      </div>
+    </div>
+
+    <!-- TAB: Visualizations -->
+    <div id="tab_visuals" class="grid hidden">
+      <div class="card col-12">
+        <h2 class="section-title">Feature Importance / Influence</h2>
+        <p class="muted">Shows which historical signals matter most for predicting competition score.</p>
+        <iframe src="assets/feature_importance.html"></iframe>
+      </div>
+
+      <div class="card col-12">
+        <h2 class="section-title">Occupation × Emirate Heatmap (Top 25 occupations)</h2>
+        <p class="muted">Average predicted competition score by emirate for the most competitive occupations.</p>
+        <iframe src="assets/heatmap.html"></iframe>
+      </div>
+    </div>
+
+    <!-- TAB: About -->
+    <div id="tab_about" class="grid hidden">
+      <div class="card col-12">
+        <h2 class="section-title">How to read the Competition Score</h2>
+        <ul class="muted">
+          <li><b>High score</b> = larger employment + stronger growth + stronger recent momentum → more crowded → harder entry.</li>
+          <li><b>Low score</b> = smaller/steady employment → less saturation → potentially easier entry.</li>
+          <li>This is a <b>decision-support estimate</b> built from historical patterns (2011–2019), not a guaranteed future outcome.</li>
+        </ul>
+      </div>
+
+      <div class="card col-12">
+        <h2 class="section-title">Exported files (for transparency)</h2>
+        <ul class="muted">
+          <li><code>assets/model_results.json</code> — metrics for each model</li>
+          <li><code>assets/model_ready_with_predictions.csv</code> — dataset + predicted scores</li>
+          <li><code>assets/top_20_overall.json</code>, <code>assets/bottom_20_overall.json</code> — rankings</li>
+        </ul>
+        <p class="footer">Generated: 2026-02-09 10:01 UTC</p>
+      </div>
+    </div>
+  </div>
+
+  <script>
+    const modelResults = [{"Model": "Linear Regression", "RMSE": 9.964986098e-16, "MAE": 5.861324498e-16, "R2": 1.0}, {"Model": "Random Forest", "RMSE": 0.2088728685, "MAE": 0.1253448662, "R2": 0.8502676861}, {"Model": "Decision Tree", "RMSE": 0.2657261854, "MAE": 0.1948178801, "R2": 0.7576627474}];
+    const top20 = [{"Emirate": "Abu Dhabi", "Occupation": "3-Technicians and associate professionals", "Avg_Employment": 410.6666666667, "Growth_Rate": 0.1556728232, "Recent_Trend": 30.0, "Volatility": 21.5715862498, "Num_Years": 9, "Competition_Score": 2.6745925811, "Predicted_Competition_Score": 2.6745925811}, {"Emirate": "Abu Dhabi", "Occupation": "5-Service and sales workers", "Avg_Employment": 400.2222222222, "Growth_Rate": 0.1310160428, "Recent_Trend": 22.6666666667, "Volatility": 18.6772456795, "Num_Years": 9, "Competition_Score": 2.4498746307, "Predicted_Competition_Score": 2.4498746307}, {"Emirate": "Abu Dhabi", "Occupation": "4-Clerical support workers", "Avg_Employment": 368.6666666667, "Growth_Rate": 0.1043478261, "Recent_Trend": 11.5, "Volatility": 13.2413493774, "Num_Years": 9, "Competition_Score": 2.0771631095, "Predicted_Competition_Score": 2.0771631095}, {"Emirate": "Abu Dhabi", "Occupation": "2-Professionals", "Avg_Employment": 302.5555555556, "Growth_Rate": 0.118466899, "Recent_Trend": 15.1666666667, "Volatility": 13.115818364, "Num_Years": 9, "Competition_Score": 2.0166607908, "Predicted_Competition_Score": 2.0166607908}, {"Emirate": "Abu Dhabi", "Occupation": "1-Managers", "Avg_Employment": 189.5555555556, "Growth_Rate": 0.1918604651, "Recent_Trend": 22.6666666667, "Volatility": 11.8144084454, "Num_Years": 9, "Competition_Score": 1.9785844158, "Predicted_Competition_Score": 1.9785844158}, {"Emirate": "Sharjah", "Occupation": "3-Technicians and associate professionals", "Avg_Employment": 231.5555555556, "Growth_Rate": 0.156097561, "Recent_Trend": 12.1666666667, "Volatility": 14.3070387581, "Num_Years": 9, "Competition_Score": 1.7955318103, "Predicted_Competition_Score": 1.7955318103}, {"Emirate": "Sharjah", "Occupation": "5-Service and sales workers", "Avg_Employment": 244.3333333333, "Growth_Rate": 0.1357466063, "Recent_Trend": 9.5, "Volatility": 12.9786148893, "Num_Years": 9, "Competition_Score": 1.746241398, "Predicted_Competition_Score": 1.746241398}, {"Emirate": "Sharjah", "Occupation": "6-Skilled agricultural, forestry and fishery workers", "Avg_Employment": 63.8888888889, "Growth_Rate": 0.6166666667, "Recent_Trend": 12.6666666667, "Volatility": 11.9577445332, "Num_Years": 9, "Competition_Score": 1.7237602745, "Predicted_Competition_Score": 1.7237602745}, {"Emirate": "Abu Dhabi", "Occupation": "6-Skilled agricultural, forestry and fishery workers", "Avg_Employment": 102.8888888889, "Growth_Rate": 0.2826086957, "Recent_Trend": 11.1666666667, "Volatility": 8.5562770259, "Num_Years": 9, "Competition_Score": 1.5459639144, "Predicted_Competition_Score": 1.5459639144}, {"Emirate": "Sharjah", "Occupation": "1-Managers", "Avg_Employment": 92.4444444444, "Growth_Rate": 0.2987012987, "Recent_Trend": 10.3333333333, "Volatility": 7.6899806547, "Num_Years": 9, "Competition_Score": 1.5111672595, "Predicted_Competition_Score": 1.5111672595}, {"Emirate": "Ajman", "Occupation": "6-Skilled agricultural, forestry and fishery workers", "Avg_Employment": 27.0, "Growth_Rate": 0.5833333333, "Recent_Trend": 8.5, "Volatility": 4.9216076867, "Num_Years": 9, "Competition_Score": 1.5068789697, "Predicted_Competition_Score": 1.5068789697}, {"Emirate": "Abu Dhabi", "Occupation": "7-Craft and related trades workers", "Avg_Employment": 385.5555555556, "Growth_Rate": -0.0180412371, "Recent_Trend": -10.3333333333, "Volatility": 9.2988782013, "Num_Years": 9, "Competition_Score": 1.4906744445, "Predicted_Competition_Score": 1.4906744445}, {"Emirate": "Abu Dhabi", "Occupation": "9-Elementary occupations", "Avg_Employment": 343.1111111111, "Growth_Rate": 0.0656716418, "Recent_Trend": -10.1666666667, "Volatility": 13.9637979906, "Num_Years": 9, "Competition_Score": 1.450290851, "Predicted_Competition_Score": 1.450290851}, {"Emirate": "Um Al Qaiwain", "Occupation": "6-Skilled agricultural, forestry and fishery workers", "Avg_Employment": 19.7777777778, "Growth_Rate": 0.5555555556, "Recent_Trend": 7.3333333333, "Volatility": 4.4914184292, "Num_Years": 9, "Competition_Score": 1.4407159976, "Predicted_Competition_Score": 1.4407159976}, {"Emirate": "Sharjah", "Occupation": "7-Craft and related trades workers", "Avg_Employment": 188.6666666667, "Growth_Rate": 0.0486486486, "Recent_Trend": 5.0, "Volatility": 4.0551750202, "Num_Years": 9, "Competition_Score": 1.4373074072, "Predicted_Competition_Score": 1.4373074072}, {"Emirate": "Fujairah", "Occupation": "8-Plant and machine operators, and assemblers", "Avg_Employment": 44.8888888889, "Growth_Rate": 0.4615384615, "Recent_Trend": 7.1666666667, "Volatility": 5.5666555777, "Num_Years": 9, "Competition_Score": 1.4315152057, "Predicted_Competition_Score": 1.4315152057}, {"Emirate": "Sharjah", "Occupation": "8-Plant and machine operators, and assemblers", "Avg_Employment": 126.2222222222, "Growth_Rate": 0.1623931624, "Recent_Trend": 6.1666666667, "Volatility": 6.8439393753, "Num_Years": 9, "Competition_Score": 1.3940958242, "Predicted_Competition_Score": 1.3940958242}, {"Emirate": "Sharjah", "Occupation": "2-Professionals", "Avg_Employment": 160.4444444444, "Growth_Rate": 0.125, "Recent_Trend": 2.8333333333, "Volatility": 6.3265070424, "Num_Years": 9, "Competition_Score": 1.3685927734, "Predicted_Competition_Score": 1.3685927734}, {"Emirate": "Um Al Qaiwain", "Occupation": "5-Service and sales workers", "Avg_Employment": 83.0, "Growth_Rate": 0.1578947368, "Recent_Trend": 9.5, "Volatility": 5.6371781751, "Num_Years": 9, "Competition_Score": 1.3680592618, "Predicted_Competition_Score": 1.3680592618}, {"Emirate": "Sharjah", "Occupation": "9-Elementary occupations", "Avg_Employment": 167.1111111111, "Growth_Rate": 0.1455696203, "Recent_Trend": 1.3333333333, "Volatility": 8.2790826712, "Num_Years": 9, "Competition_Score": 1.3621958157, "Predicted_Competition_Score": 1.3621958157}];
+    const bottom20 = [{"Emirate": "Dubai", "Occupation": "X-NA", "Avg_Employment": 5.3333333333, "Growth_Rate": -0.8, "Recent_Trend": -4.0, "Volatility": 2.7080128015, "Num_Years": 9, "Competition_Score": 0.1676024988, "Predicted_Competition_Score": 0.1676024988}, {"Emirate": "Abu Dhabi", "Occupation": "X-NA", "Avg_Employment": 8.7777777778, "Growth_Rate": -0.7142857143, "Recent_Trend": -6.6666666667, "Volatility": 4.2368168811, "Num_Years": 9, "Competition_Score": 0.1703989178, "Predicted_Competition_Score": 0.1703989178}, {"Emirate": "Sharjah", "Occupation": "X-NA", "Avg_Employment": 3.8888888889, "Growth_Rate": -0.6, "Recent_Trend": -1.8333333333, "Volatility": 1.0999438818, "Num_Years": 9, "Competition_Score": 0.3589720759, "Predicted_Competition_Score": 0.3589720759}, {"Emirate": "Dubai", "Occupation": "8-Plant and machine operators, and assemblers", "Avg_Employment": 71.1111111111, "Growth_Rate": -0.1111111111, "Recent_Trend": -4.6666666667, "Volatility": 3.6038388312, "Num_Years": 9, "Competition_Score": 0.7979122273, "Predicted_Competition_Score": 0.7979122273}, {"Emirate": "Um Al Qaiwain", "Occupation": "8-Plant and machine operators, and assemblers", "Avg_Employment": 33.4444444444, "Growth_Rate": -0.0588235294, "Recent_Trend": -1.6666666667, "Volatility": 1.6405358956, "Num_Years": 9, "Competition_Score": 0.8172566033, "Predicted_Competition_Score": 0.8172566033}, {"Emirate": "Ras Al Khaima", "Occupation": "X-NA", "Avg_Employment": 1.0, "Growth_Rate": 0.0, "Recent_Trend": 0.0, "Volatility": 0.0, "Num_Years": 6, "Competition_Score": 0.8209042295, "Predicted_Competition_Score": 0.8209042295}, {"Emirate": "Ras Al Khaima", "Occupation": "6-Skilled agricultural, forestry and fishery workers", "Avg_Employment": 31.8888888889, "Growth_Rate": -0.0571428571, "Recent_Trend": -0.8333333333, "Volatility": 1.7284832429, "Num_Years": 9, "Competition_Score": 0.8353069922, "Predicted_Competition_Score": 0.8353069922}, {"Emirate": "Um Al Qaiwain", "Occupation": "4-Clerical support workers", "Avg_Employment": 70.2222222222, "Growth_Rate": -0.0547945205, "Recent_Trend": -3.8333333333, "Volatility": 3.1190375217, "Num_Years": 9, "Competition_Score": 0.8561564861, "Predicted_Competition_Score": 0.8561564861}, {"Emirate": "Ras Al Khaima", "Occupation": "1-Managers", "Avg_Employment": 44.6666666667, "Growth_Rate": 0.0, "Recent_Trend": -1.5, "Volatility": 1.6996731712, "Num_Years": 9, "Competition_Score": 0.890304871, "Predicted_Competition_Score": 0.890304871}, {"Emirate": "Um Al Qaiwain", "Occupation": "9-Elementary occupations", "Avg_Employment": 52.1111111111, "Growth_Rate": -0.0185185185, "Recent_Trend": -1.6666666667, "Volatility": 1.9688939052, "Num_Years": 9, "Competition_Score": 0.8912726997, "Predicted_Competition_Score": 0.8912726997}, {"Emirate": "Ajman", "Occupation": "8-Plant and machine operators, and assemblers", "Avg_Employment": 48.5555555556, "Growth_Rate": -0.0204081633, "Recent_Trend": -0.8333333333, "Volatility": 1.4989708404, "Num_Years": 9, "Competition_Score": 0.9019208469, "Predicted_Competition_Score": 0.9019208469}, {"Emirate": "Ajman", "Occupation": "4-Clerical support workers", "Avg_Employment": 86.3333333333, "Growth_Rate": 0.0, "Recent_Trend": -4.5, "Volatility": 3.6209268304, "Num_Years": 9, "Competition_Score": 0.917633412, "Predicted_Competition_Score": 0.917633412}, {"Emirate": "Ajman", "Occupation": "9-Elementary occupations", "Avg_Employment": 75.0, "Growth_Rate": 0.0131578947, "Recent_Trend": -3.5, "Volatility": 3.2659863237, "Num_Years": 9, "Competition_Score": 0.924049958, "Predicted_Competition_Score": 0.924049958}, {"Emirate": "Ras Al Khaima", "Occupation": "8-Plant and machine operators, and assemblers", "Avg_Employment": 44.0, "Growth_Rate": 0.0222222222, "Recent_Trend": 0.0, "Volatility": 2.1081851068, "Num_Years": 9, "Competition_Score": 0.9415538888, "Predicted_Competition_Score": 0.9415538888}, {"Emirate": "Um Al Qaiwain", "Occupation": "7-Craft and related trades workers", "Avg_Employment": 60.4444444444, "Growth_Rate": 0.0166666667, "Recent_Trend": -1.1666666667, "Volatility": 1.4229164972, "Num_Years": 9, "Competition_Score": 0.9488477364, "Predicted_Competition_Score": 0.9488477364}, {"Emirate": "Dubai", "Occupation": "7-Craft and related trades workers", "Avg_Employment": 111.2222222222, "Growth_Rate": -0.0267857143, "Recent_Trend": -4.3333333333, "Volatility": 3.0102704854, "Num_Years": 9, "Competition_Score": 0.9636120809, "Predicted_Competition_Score": 0.9636120809}, {"Emirate": "Dubai", "Occupation": "2-Professionals", "Avg_Employment": 97.0, "Growth_Rate": 0.0105263158, "Recent_Trend": -2.5, "Volatility": 3.7712361663, "Num_Years": 9, "Competition_Score": 1.0006879582, "Predicted_Competition_Score": 1.0006879582}, {"Emirate": "Ajman", "Occupation": "7-Craft and related trades workers", "Avg_Employment": 86.2222222222, "Growth_Rate": 0.011627907, "Recent_Trend": -0.8333333333, "Volatility": 2.8588178512, "Num_Years": 9, "Competition_Score": 1.016479214, "Predicted_Competition_Score": 1.016479214}, {"Emirate": "Ajman", "Occupation": "2-Professionals", "Avg_Employment": 72.7777777778, "Growth_Rate": 0.1060606061, "Recent_Trend": -2.1666666667, "Volatility": 4.1573970964, "Num_Years": 9, "Competition_Score": 1.0172617293, "Predicted_Competition_Score": 1.0172617293}, {"Emirate": "Fujairah", "Occupation": "9-Elementary occupations", "Avg_Employment": 53.5555555556, "Growth_Rate": 0.0172413793, "Recent_Trend": 3.1666666667, "Volatility": 3.4995590551, "Num_Years": 9, "Competition_Score": 1.0398755931, "Predicted_Competition_Score": 1.0398755931}];
+    const bestModel = "Linear Regression";
+
+    function fmt(x) {
+      if (typeof x !== "number") return x;
+      return x.toFixed(4);
+    }
+
+    function makeTable(rows, cols, highlightBest=false) {
+      let html = "<table><thead><tr>";
+      cols.forEach(c => html += `<th>${c}</th>`);
+      html += "</tr></thead><tbody>";
+
+      rows.forEach(r => {
+        html += "<tr>";
+        cols.forEach(c => {
+          let v = r[c];
+          if (typeof v === "number") v = fmt(v);
+
+          if (highlightBest && c === "Model" && r["Model"] === bestModel) {
+            html += `<td><span class="badge best">⭐ ${v}</span></td>`;
+          } else {
+            html += `<td>${v}</td>`;
+          }
+        });
+        html += "</tr>";
+      });
+
+      html += "</tbody></table>";
+      return html;
+    }
+
+    // Render tables
+    document.getElementById("results_table").innerHTML =
+      makeTable(modelResults, ["Model", "RMSE", "MAE", "R2"], true);
+
+    // Insights tables (rankings)
+    // show concise columns
+    function pickCols(rows) {
+      return rows.map(r => ({
+        "Emirate": r["Emirate"],
+        "Occupation": r["Occupation"],
+        "Predicted_Competition_Score": r["Predicted_Competition_Score"].toFixed(4)
+      }));
+    }
+
+    document.getElementById("top_table").innerHTML =
+      makeTable(pickCols(top20), ["Emirate", "Occupation", "Predicted_Competition_Score"]);
+
+    document.getElementById("bottom_table").innerHTML =
+      makeTable(pickCols(bottom20), ["Emirate", "Occupation", "Predicted_Competition_Score"]);
+
+    // Tabs
+    const tabs = document.querySelectorAll(".tab");
+    const tabPanels = ["tab_models","tab_insights","tab_visuals","tab_about"].map(id => document.getElementById(id));
+
+    tabs.forEach(btn => {
+      btn.addEventListener("click", () => {
+        tabs.forEach(b => b.classList.remove("active"));
+        btn.classList.add("active");
+
+        const target = btn.dataset.tab;
+        tabPanels.forEach(p => p.classList.add("hidden"));
+        document.getElementById(target).classList.remove("hidden");
+        window.scrollTo({ top: 0, behavior: "smooth" });
+      });
+    });
+  </script>
+</body>
+</html>

@@ -1,0 +1,222 @@
+[
+  {
+    "Emirate":"Abu Dhabi",
+    "Occupation":"3-Technicians and associate professionals",
+    "Avg_Employment":410.6666666667,
+    "Growth_Rate":0.1556728232,
+    "Recent_Trend":30.0,
+    "Volatility":21.5715862498,
+    "Num_Years":9,
+    "Competition_Score":2.6745925811,
+    "Predicted_Competition_Score":2.6745925811
+  },
+  {
+    "Emirate":"Abu Dhabi",
+    "Occupation":"5-Service and sales workers",
+    "Avg_Employment":400.2222222222,
+    "Growth_Rate":0.1310160428,
+    "Recent_Trend":22.6666666667,
+    "Volatility":18.6772456795,
+    "Num_Years":9,
+    "Competition_Score":2.4498746307,
+    "Predicted_Competition_Score":2.4498746307
+  },
+  {
+    "Emirate":"Abu Dhabi",
+    "Occupation":"4-Clerical support workers",
+    "Avg_Employment":368.6666666667,
+    "Growth_Rate":0.1043478261,
+    "Recent_Trend":11.5,
+    "Volatility":13.2413493774,
+    "Num_Years":9,
+    "Competition_Score":2.0771631095,
+    "Predicted_Competition_Score":2.0771631095
+  },
+  {
+    "Emirate":"Abu Dhabi",
+    "Occupation":"2-Professionals",
+    "Avg_Employment":302.5555555556,
+    "Growth_Rate":0.118466899,
+    "Recent_Trend":15.1666666667,
+    "Volatility":13.115818364,
+    "Num_Years":9,
+    "Competition_Score":2.0166607908,
+    "Predicted_Competition_Score":2.0166607908
+  },
+  {
+    "Emirate":"Abu Dhabi",
+    "Occupation":"1-Managers",
+    "Avg_Employment":189.5555555556,
+    "Growth_Rate":0.1918604651,
+    "Recent_Trend":22.6666666667,
+    "Volatility":11.8144084454,
+    "Num_Years":9,
+    "Competition_Score":1.9785844158,
+    "Predicted_Competition_Score":1.9785844158
+  },
+  {
+    "Emirate":"Sharjah",
+    "Occupation":"3-Technicians and associate professionals",
+    "Avg_Employment":231.5555555556,
+    "Growth_Rate":0.156097561,
+    "Recent_Trend":12.1666666667,
+    "Volatility":14.3070387581,
+    "Num_Years":9,
+    "Competition_Score":1.7955318103,
+    "Predicted_Competition_Score":1.7955318103
+  },
+  {
+    "Emirate":"Sharjah",
+    "Occupation":"5-Service and sales workers",
+    "Avg_Employment":244.3333333333,
+    "Growth_Rate":0.1357466063,
+    "Recent_Trend":9.5,
+    "Volatility":12.9786148893,
+    "Num_Years":9,
+    "Competition_Score":1.746241398,
+    "Predicted_Competition_Score":1.746241398
+  },
+  {
+    "Emirate":"Sharjah",
+    "Occupation":"6-Skilled agricultural, forestry and fishery workers",
+    "Avg_Employment":63.8888888889,
+    "Growth_Rate":0.6166666667,
+    "Recent_Trend":12.6666666667,
+    "Volatility":11.9577445332,
+    "Num_Years":9,
+    "Competition_Score":1.7237602745,
+    "Predicted_Competition_Score":1.7237602745
+  },
+  {
+    "Emirate":"Abu Dhabi",
+    "Occupation":"6-Skilled agricultural, forestry and fishery workers",
+    "Avg_Employment":102.8888888889,
+    "Growth_Rate":0.2826086957,
+    "Recent_Trend":11.1666666667,
+    "Volatility":8.5562770259,
+    "Num_Years":9,
+    "Competition_Score":1.5459639144,
+    "Predicted_Competition_Score":1.5459639144
+  },
+  {
+    "Emirate":"Sharjah",
+    "Occupation":"1-Managers",
+    "Avg_Employment":92.4444444444,
+    "Growth_Rate":0.2987012987,
+    "Recent_Trend":10.3333333333,
+    "Volatility":7.6899806547,
+    "Num_Years":9,
+    "Competition_Score":1.5111672595,
+    "Predicted_Competition_Score":1.5111672595
+  },
+  {
+    "Emirate":"Ajman",
+    "Occupation":"6-Skilled agricultural, forestry and fishery workers",
+    "Avg_Employment":27.0,
+    "Growth_Rate":0.5833333333,
+    "Recent_Trend":8.5,
+    "Volatility":4.9216076867,
+    "Num_Years":9,
+    "Competition_Score":1.5068789697,
+    "Predicted_Competition_Score":1.5068789697
+  },
+  {
+    "Emirate":"Abu Dhabi",
+    "Occupation":"7-Craft and related trades workers",
+    "Avg_Employment":385.5555555556,
+    "Growth_Rate":-0.0180412371,
+    "Recent_Trend":-10.3333333333,
+    "Volatility":9.2988782013,
+    "Num_Years":9,
+    "Competition_Score":1.4906744445,
+    "Predicted_Competition_Score":1.4906744445
+  },
+  {
+    "Emirate":"Abu Dhabi",
+    "Occupation":"9-Elementary occupations",
+    "Avg_Employment":343.1111111111,
+    "Growth_Rate":0.0656716418,
+    "Recent_Trend":-10.1666666667,
+    "Volatility":13.9637979906,
+    "Num_Years":9,
+    "Competition_Score":1.450290851,
+    "Predicted_Competition_Score":1.450290851
+  },
+  {
+    "Emirate":"Um Al Qaiwain",
+    "Occupation":"6-Skilled agricultural, forestry and fishery workers",
+    "Avg_Employment":19.7777777778,
+    "Growth_Rate":0.5555555556,
+    "Recent_Trend":7.3333333333,
+    "Volatility":4.4914184292,
+    "Num_Years":9,
+    "Competition_Score":1.4407159976,
+    "Predicted_Competition_Score":1.4407159976
+  },
+  {
+    "Emirate":"Sharjah",
+    "Occupation":"7-Craft and related trades workers",
+    "Avg_Employment":188.6666666667,
+    "Growth_Rate":0.0486486486,
+    "Recent_Trend":5.0,
+    "Volatility":4.0551750202,
+    "Num_Years":9,
+    "Competition_Score":1.4373074072,
+    "Predicted_Competition_Score":1.4373074072
+  },
+  {
+    "Emirate":"Fujairah",
+    "Occupation":"8-Plant and machine operators, and assemblers",
+    "Avg_Employment":44.8888888889,
+    "Growth_Rate":0.4615384615,
+    "Recent_Trend":7.1666666667,
+    "Volatility":5.5666555777,
+    "Num_Years":9,
+    "Competition_Score":1.4315152057,
+    "Predicted_Competition_Score":1.4315152057
+  },
+  {
+    "Emirate":"Sharjah",
+    "Occupation":"8-Plant and machine operators, and assemblers",
+    "Avg_Employment":126.2222222222,
+    "Growth_Rate":0.1623931624,
+    "Recent_Trend":6.1666666667,
+    "Volatility":6.8439393753,
+    "Num_Years":9,
+    "Competition_Score":1.3940958242,
+    "Predicted_Competition_Score":1.3940958242
+  },
+  {
+    "Emirate":"Sharjah",
+    "Occupation":"2-Professionals",
+    "Avg_Employment":160.4444444444,
+    "Growth_Rate":0.125,
+    "Recent_Trend":2.8333333333,
+    "Volatility":6.3265070424,
+    "Num_Years":9,
+    "Competition_Score":1.3685927734,
+    "Predicted_Competition_Score":1.3685927734
+  },
+  {
+    "Emirate":"Um Al Qaiwain",
+    "Occupation":"5-Service and sales workers",
+    "Avg_Employment":83.0,
+    "Growth_Rate":0.1578947368,
+    "Recent_Trend":9.5,
+    "Volatility":5.6371781751,
+    "Num_Years":9,
+    "Competition_Score":1.3680592618,
+    "Predicted_Competition_Score":1.3680592618
+  },
+  {
+    "Emirate":"Sharjah",
+    "Occupation":"9-Elementary occupations",
+    "Avg_Employment":167.1111111111,
+    "Growth_Rate":0.1455696203,
+    "Recent_Trend":1.3333333333,
+    "Volatility":8.2790826712,
+    "Num_Years":9,
+    "Competition_Score":1.3621958157,
+    "Predicted_Competition_Score":1.3621958157
+  }
+]

@@ -1,0 +1,222 @@
+[
+  {
+    "Emirate":"Dubai",
+    "Occupation":"X-NA",
+    "Avg_Employment":5.3333333333,
+    "Growth_Rate":-0.8,
+    "Recent_Trend":-4.0,
+    "Volatility":2.7080128015,
+    "Num_Years":9,
+    "Competition_Score":0.1676024988,
+    "Predicted_Competition_Score":0.1676024988
+  },
+  {
+    "Emirate":"Abu Dhabi",
+    "Occupation":"X-NA",
+    "Avg_Employment":8.7777777778,
+    "Growth_Rate":-0.7142857143,
+    "Recent_Trend":-6.6666666667,
+    "Volatility":4.2368168811,
+    "Num_Years":9,
+    "Competition_Score":0.1703989178,
+    "Predicted_Competition_Score":0.1703989178
+  },
+  {
+    "Emirate":"Sharjah",
+    "Occupation":"X-NA",
+    "Avg_Employment":3.8888888889,
+    "Growth_Rate":-0.6,
+    "Recent_Trend":-1.8333333333,
+    "Volatility":1.0999438818,
+    "Num_Years":9,
+    "Competition_Score":0.3589720759,
+    "Predicted_Competition_Score":0.3589720759
+  },
+  {
+    "Emirate":"Dubai",
+    "Occupation":"8-Plant and machine operators, and assemblers",
+    "Avg_Employment":71.1111111111,
+    "Growth_Rate":-0.1111111111,
+    "Recent_Trend":-4.6666666667,
+    "Volatility":3.6038388312,
+    "Num_Years":9,
+    "Competition_Score":0.7979122273,
+    "Predicted_Competition_Score":0.7979122273
+  },
+  {
+    "Emirate":"Um Al Qaiwain",
+    "Occupation":"8-Plant and machine operators, and assemblers",
+    "Avg_Employment":33.4444444444,
+    "Growth_Rate":-0.0588235294,
+    "Recent_Trend":-1.6666666667,
+    "Volatility":1.6405358956,
+    "Num_Years":9,
+    "Competition_Score":0.8172566033,
+    "Predicted_Competition_Score":0.8172566033
+  },
+  {
+    "Emirate":"Ras Al Khaima",
+    "Occupation":"X-NA",
+    "Avg_Employment":1.0,
+    "Growth_Rate":0.0,
+    "Recent_Trend":0.0,
+    "Volatility":0.0,
+    "Num_Years":6,
+    "Competition_Score":0.8209042295,
+    "Predicted_Competition_Score":0.8209042295
+  },
+  {
+    "Emirate":"Ras Al Khaima",
+    "Occupation":"6-Skilled agricultural, forestry and fishery workers",
+    "Avg_Employment":31.8888888889,
+    "Growth_Rate":-0.0571428571,
+    "Recent_Trend":-0.8333333333,
+    "Volatility":1.7284832429,
+    "Num_Years":9,
+    "Competition_Score":0.8353069922,
+    "Predicted_Competition_Score":0.8353069922
+  },
+  {
+    "Emirate":"Um Al Qaiwain",
+    "Occupation":"4-Clerical support workers",
+    "Avg_Employment":70.2222222222,
+    "Growth_Rate":-0.0547945205,
+    "Recent_Trend":-3.8333333333,
+    "Volatility":3.1190375217,
+    "Num_Years":9,
+    "Competition_Score":0.8561564861,
+    "Predicted_Competition_Score":0.8561564861
+  },
+  {
+    "Emirate":"Ras Al Khaima",
+    "Occupation":"1-Managers",
+    "Avg_Employment":44.6666666667,
+    "Growth_Rate":0.0,
+    "Recent_Trend":-1.5,
+    "Volatility":1.6996731712,
+    "Num_Years":9,
+    "Competition_Score":0.890304871,
+    "Predicted_Competition_Score":0.890304871
+  },
+  {
+    "Emirate":"Um Al Qaiwain",
+    "Occupation":"9-Elementary occupations",
+    "Avg_Employment":52.1111111111,
+    "Growth_Rate":-0.0185185185,
+    "Recent_Trend":-1.6666666667,
+    "Volatility":1.9688939052,
+    "Num_Years":9,
+    "Competition_Score":0.8912726997,
+    "Predicted_Competition_Score":0.8912726997
+  },
+  {
+    "Emirate":"Ajman",
+    "Occupation":"8-Plant and machine operators, and assemblers",
+    "Avg_Employment":48.5555555556,
+    "Growth_Rate":-0.0204081633,
+    "Recent_Trend":-0.8333333333,
+    "Volatility":1.4989708404,
+    "Num_Years":9,
+    "Competition_Score":0.9019208469,
+    "Predicted_Competition_Score":0.9019208469
+  },
+  {
+    "Emirate":"Ajman",
+    "Occupation":"4-Clerical support workers",
+    "Avg_Employment":86.3333333333,
+    "Growth_Rate":0.0,
+    "Recent_Trend":-4.5,
+    "Volatility":3.6209268304,
+    "Num_Years":9,
+    "Competition_Score":0.917633412,
+    "Predicted_Competition_Score":0.917633412
+  },
+  {
+    "Emirate":"Ajman",
+    "Occupation":"9-Elementary occupations",
+    "Avg_Employment":75.0,
+    "Growth_Rate":0.0131578947,
+    "Recent_Trend":-3.5,
+    "Volatility":3.2659863237,
+    "Num_Years":9,
+    "Competition_Score":0.924049958,
+    "Predicted_Competition_Score":0.924049958
+  },
+  {
+    "Emirate":"Ras Al Khaima",
+    "Occupation":"8-Plant and machine operators, and assemblers",
+    "Avg_Employment":44.0,
+    "Growth_Rate":0.0222222222,
+    "Recent_Trend":0.0,
+    "Volatility":2.1081851068,
+    "Num_Years":9,
+    "Competition_Score":0.9415538888,
+    "Predicted_Competition_Score":0.9415538888
+  },
+  {
+    "Emirate":"Um Al Qaiwain",
+    "Occupation":"7-Craft and related trades workers",
+    "Avg_Employment":60.4444444444,
+    "Growth_Rate":0.0166666667,
+    "Recent_Trend":-1.1666666667,
+    "Volatility":1.4229164972,
+    "Num_Years":9,
+    "Competition_Score":0.9488477364,
+    "Predicted_Competition_Score":0.9488477364
+  },
+  {
+    "Emirate":"Dubai",
+    "Occupation":"7-Craft and related trades workers",
+    "Avg_Employment":111.2222222222,
+    "Growth_Rate":-0.0267857143,
+    "Recent_Trend":-4.3333333333,
+    "Volatility":3.0102704854,
+    "Num_Years":9,
+    "Competition_Score":0.9636120809,
+    "Predicted_Competition_Score":0.9636120809
+  },
+  {
+    "Emirate":"Dubai",
+    "Occupation":"2-Professionals",
+    "Avg_Employment":97.0,
+    "Growth_Rate":0.0105263158,
+    "Recent_Trend":-2.5,
+    "Volatility":3.7712361663,
+    "Num_Years":9,
+    "Competition_Score":1.0006879582,
+    "Predicted_Competition_Score":1.0006879582
+  },
+  {
+    "Emirate":"Ajman",
+    "Occupation":"7-Craft and related trades workers",
+    "Avg_Employment":86.2222222222,
+    "Growth_Rate":0.011627907,
+    "Recent_Trend":-0.8333333333,
+    "Volatility":2.8588178512,
+    "Num_Years":9,
+    "Competition_Score":1.016479214,
+    "Predicted_Competition_Score":1.016479214
+  },
+  {
+    "Emirate":"Ajman",
+    "Occupation":"2-Professionals",
+    "Avg_Employment":72.7777777778,
+    "Growth_Rate":0.1060606061,
+    "Recent_Trend":-2.1666666667,
+    "Volatility":4.1573970964,
+    "Num_Years":9,
+    "Competition_Score":1.0172617293,
+    "Predicted_Competition_Score":1.0172617293
+  },
+  {
+    "Emirate":"Fujairah",
+    "Occupation":"9-Elementary occupations",
+    "Avg_Employment":53.5555555556,
+    "Growth_Rate":0.0172413793,
+    "Recent_Trend":3.1666666667,
+    "Volatility":3.4995590551,
+    "Num_Years":9,
+    "Competition_Score":1.0398755931,
+    "Predicted_Competition_Score":1.0398755931
+  }
+]
